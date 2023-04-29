@@ -49,7 +49,7 @@ class pminister extends StatelessWidget {
       body: Column(
         children: [
             if(p=="0")...[
-                Expanded(
+                /*Expanded(
                     child: Container(
                       child: ListView.builder(
                           itemCount: mini.length,
@@ -65,9 +65,16 @@ class pminister extends StatelessWidget {
                       )
                 )
               ),
-              SizedBox(height: 10.0,)
-            ]else if(p == "1")...[
-              Expanded(
+              SizedBox(height: 10.0,)*/
+
+              Displaydata(mini, context)
+            ]
+
+
+
+
+            else if(p == "1")...[
+             /* Expanded(
                   child: Container(
                     child: ListView.builder(
                         itemCount: doc.length,
@@ -83,9 +90,12 @@ class pminister extends StatelessWidget {
                     ),
                   )
               ),
-              SizedBox(height: 10.0,),
-            ]else if(p == "2")...[
-              Expanded(child: Container(
+              SizedBox(height: 10.0,),*/
+              Displaydata(doc, context)
+            ]
+
+            else if(p == "2")...[
+             /* Expanded(child: Container(
                         child: ListView.builder(
                         itemCount: Actor.length,
                         itemBuilder: (BuildContext context, int pos){
@@ -100,26 +110,26 @@ class pminister extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10.0,),
-            ]else if(p == 3)...[
+              SizedBox(height: 10.0,),*/
+            ]/*else if(p == 3)...[
               Displaydata('../images/priyanka.jpg', 'Priyanka Chopra', context),
               SizedBox(height: 10.0,)
-            ],
+            ],*/
         ],
       ),
     );
   }
 
-  Widget Displaydata(String url, String naam , BuildContext context){
+  Widget Displaydata(List<ModelClass> ll,BuildContext context){
     return  Expanded(
       child: Container(
         child: ListView.builder(
-            itemCount: Actor.length,
+            itemCount:ll.length,
             itemBuilder: (BuildContext context, int pos){
               return Column(
                 children: [
-                  Image(image: AssetImage(url),width: 200.0,height: 100.0,),
-                  Text(naam),
+                  Image(image: AssetImage(ll[pos].imagee),width: 200.0,height: 100.0,),
+                  Text(ll[pos].name),
                   SizedBox(height: 10.0,),
                 ],
               );
