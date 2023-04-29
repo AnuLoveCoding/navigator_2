@@ -7,7 +7,9 @@ class pminister extends StatelessWidget {
 /*
   final int p;
 
-  pminister({required this.p});*/
+  pminister({required this.p});
+
+  */
 
   List<ModelClass> mini = [
     ModelClass(name: 'Narendar Modi', imagee: '../images/modi.jpg'),
@@ -32,6 +34,7 @@ class pminister extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final routeArgs1 =
     ModalRoute.of(context)?.settings.arguments as Map<String, String>;
     String? p = routeArgs1['p'];
