@@ -1,7 +1,7 @@
-class cls{
+class ModelClass{
   final String name;
   final String imagee;
 
-  cls({required this.name, required this.imagee});
+  ModelClass({required this.name, required this.imagee});
 
 }
